@@ -38,12 +38,23 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gunformula"
+    },
+    {
+      "name": "Gun",
+      "type": "gun",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gun"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.ouo.gun": "Gun"
+    }
   },
   "foldersRoot": {
     "name": "~",
