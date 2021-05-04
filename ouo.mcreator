@@ -2,15 +2,6 @@
   "id_map": {},
   "mod_elements": [
     {
-      "name": "Gun",
-      "type": "gun",
-      "sortid": 1,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "gun"
-    },
-    {
       "name": "GunDangZiDanJiZhongFangKuaiShi",
       "type": "procedure",
       "sortid": 2,
@@ -52,9 +43,7 @@
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {
-      "item.ouo.gun": "Gun"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
