@@ -3,9 +3,9 @@
   "_type": "gun",
   "definition": {
     "renderType": 0,
-    "texture": "image-removebg-preview",
+    "texture": "123",
     "customModelName": "Normal",
-    "name": "Gun",
+    "name": "Explosiongun",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:Mod"
@@ -14,24 +14,33 @@
     "ammoItem": {
       "value": "CUSTOM:Bullet"
     },
-    "shootConstantly": true,
-    "usageCount": 9000,
+    "shootConstantly": false,
+    "usageCount": 10000,
     "actionSound": {
       "value": "entity.arrow.shoot"
     },
     "hasGlow": false,
     "animation": "none",
     "enableMeleeDamage": true,
-    "damageVsEntity": 4.0,
-    "bulletPower": 5.0,
-    "bulletDamage": 5.0,
+    "damageVsEntity": 3.0,
+    "bulletPower": 99.0,
+    "bulletDamage": 6.0,
     "bulletKnockback": 0,
     "bulletParticles": true,
-    "bulletIgnitesFire": false,
+    "bulletIgnitesFire": true,
     "bulletItemTexture": {
       "value": "CUSTOM:Bullet"
     },
     "bulletModel": "Default",
-    "customBulletModelTexture": ""
+    "customBulletModelTexture": "",
+    "onBulletHitsBlock": {
+      "name": "GunDangZiDanJiZhongFangKuaiShi"
+    },
+    "onBulletHitsPlayer": {
+      "name": "GunDangZiDanJiZhongFangKuaiShi"
+    },
+    "onBulletHitsEntity": {
+      "name": "GunDangZiDanJiZhongFangKuaiShi"
+    }
   }
 }

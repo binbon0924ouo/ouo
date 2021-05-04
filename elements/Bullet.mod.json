@@ -3,15 +3,15 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "fly",
+    "texture": "image-removebg-preview_1",
     "customModelName": "Normal",
-    "name": "Fly",
-    "rarity": "EPIC",
+    "name": "Bullet",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:Mod"
     },
-    "stackSize": 1,
-    "enchantability": 30,
+    "stackSize": 64,
+    "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 0,
@@ -19,21 +19,15 @@
       "value": ""
     },
     "destroyAnyBlock": false,
-    "immuneToFire": true,
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "enableMeleeDamage": true,
-    "damageVsEntity": 10.0,
+    "damageVsEntity": 1.0,
     "specialInfo": [],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
-    "inventoryStackSize": 64,
-    "onItemInUseTick": {
-      "name": "UnlimitedTouKuiShiJianMeiYouXiKe"
-    },
-    "onDroppedByPlayer": {
-      "name": "FlyDangWanJiaFangXiaWuPinShi"
-    }
+    "inventoryStackSize": 64
   }
 }

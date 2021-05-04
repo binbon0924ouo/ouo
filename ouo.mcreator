@@ -58,57 +58,40 @@
       "registry_name": "mod"
     },
     {
-      "name": "UnlimitedTouKuiShiJianMeiYouXiKe",
-      "type": "procedure",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "unlimited_tou_kui_shi_jian_mei_you_xi_ke",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Fly",
+      "name": "Bullet",
       "type": "item",
-      "sortid": 7,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "fly"
+      "registry_name": "bullet"
     },
     {
-      "name": "Flyformula",
+      "name": "Bulletformula",
       "type": "recipe",
-      "sortid": 8,
+      "sortid": 12,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "flyformula"
+      "registry_name": "bulletformula"
     },
     {
-      "name": "Flyno",
-      "type": "recipe",
-      "sortid": 9,
+      "name": "Explosiongun",
+      "type": "gun",
+      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "flyno"
+      "registry_name": "explosiongun"
     },
     {
-      "name": "FlyDangWanJiaFangXiaWuPinShi",
+      "name": "ImboingboingDangShiTiHuiDongWuPinShi",
       "type": "procedure",
-      "sortid": 10,
+      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "fly_dang_wan_jia_fang_xia_wu_pin_shi",
+      "registry_name": "imboingboing_dang_shi_ti_hui_dong_wu_pin_shi",
       "metadata": {
         "dependencies": [
           {
@@ -117,6 +100,15 @@
           }
         ]
       }
+    },
+    {
+      "name": "Imboingboing",
+      "type": "tool",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "imboingboing"
     }
   ],
   "variable_elements": [],
@@ -124,7 +116,9 @@
   "language_map": {
     "en_us": {
       "itemGroup.tabmod": "Mod",
-      "item.ouo.fly": "Fly",
+      "item.ouo.imboingboing": "Rushia",
+      "item.ouo.explosiongun": "Explosiongun",
+      "item.ouo.bullet": "Bullet",
       "item.ouo.gun": "Gun"
     }
   },

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "ouo:items/0-removebg-preview"
+  }
+}

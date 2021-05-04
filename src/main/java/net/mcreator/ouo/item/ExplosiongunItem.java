@@ -34,25 +34,28 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.ouo.procedures.GunDangZiDanJiZhongFangKuaiShiProcedure;
 import net.mcreator.ouo.itemgroup.ModItemGroup;
-import net.mcreator.ouo.entity.renderer.GunRenderer;
+import net.mcreator.ouo.entity.renderer.ExplosiongunRenderer;
 import net.mcreator.ouo.OuoModElements;
 
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 @OuoModElements.ModElement.Tag
-public class GunItem extends OuoModElements.ModElement {
-	@ObjectHolder("ouo:gun")
+public class ExplosiongunItem extends OuoModElements.ModElement {
+	@ObjectHolder("ouo:explosiongun")
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletgun").setRegistryName("entitybulletgun");
-	public GunItem(OuoModElements instance) {
-		super(instance, 4);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new GunRenderer.ModelRegisterHandler());
+			.size(0.5f, 0.5f)).build("entitybulletexplosiongun").setRegistryName("entitybulletexplosiongun");
+	public ExplosiongunItem(OuoModElements instance) {
+		super(instance, 13);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new ExplosiongunRenderer.ModelRegisterHandler());
 	}
 
 	@Override
@@ -62,8 +65,8 @@ public class GunItem extends OuoModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ModItemGroup.tab).maxDamage(9000));
-			setRegistryName("gun");
+			super(new Item.Properties().group(ModItemGroup.tab).maxDamage(10000));
+			setRegistryName("explosiongun");
 		}
 
 		@Override
@@ -88,7 +91,7 @@ public class GunItem extends OuoModElements.ModElement {
 				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 				builder.putAll(super.getAttributeModifiers(slot));
 				builder.put(Attributes.ATTACK_DAMAGE,
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Ranged item modifier", (double) 2, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Ranged item modifier", (double) 1, AttributeModifier.Operation.ADDITION));
 				builder.put(Attributes.ATTACK_SPEED,
 						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Ranged item modifier", -2.4, AttributeModifier.Operation.ADDITION));
 				return builder.build();
@@ -97,8 +100,7 @@ public class GunItem extends OuoModElements.ModElement {
 		}
 
 		@Override
-		public void onUsingTick(ItemStack itemstack, LivingEntity entityLiving, int count) {
-			World world = entityLiving.world;
+		public void onPlayerStoppedUsing(ItemStack itemstack, World world, LivingEntity entityLiving, int timeLeft) {
 			if (!world.isRemote && entityLiving instanceof ServerPlayerEntity) {
 				ServerPlayerEntity entity = (ServerPlayerEntity) entityLiving;
 				double x = entity.getPosX();
@@ -116,7 +118,7 @@ public class GunItem extends OuoModElements.ModElement {
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 5, 0);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 99f, 6, 0);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -135,7 +137,6 @@ public class GunItem extends OuoModElements.ModElement {
 							}
 						}
 					}
-					entity.stopActiveHand();
 				}
 			}
 		}
@@ -176,9 +177,40 @@ public class GunItem extends OuoModElements.ModElement {
 		}
 
 		@Override
+		public void onCollideWithPlayer(PlayerEntity entity) {
+			super.onCollideWithPlayer(entity);
+			Entity sourceentity = this.func_234616_v_();
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			World world = this.world;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GunDangZiDanJiZhongFangKuaiShiProcedure.executeProcedure($_dependencies);
+			}
+		}
+
+		@Override
 		protected void arrowHit(LivingEntity entity) {
 			super.arrowHit(entity);
 			entity.setArrowCountInEntity(entity.getArrowCountInEntity() - 1);
+			Entity sourceentity = this.func_234616_v_();
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			World world = this.world;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GunDangZiDanJiZhongFangKuaiShiProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override
@@ -190,6 +222,14 @@ public class GunItem extends OuoModElements.ModElement {
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
 			if (this.inGround) {
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					GunDangZiDanJiZhongFangKuaiShiProcedure.executeProcedure($_dependencies);
+				}
 				this.remove();
 			}
 		}
@@ -201,6 +241,7 @@ public class GunItem extends OuoModElements.ModElement {
 		entityarrow.setIsCritical(true);
 		entityarrow.setDamage(damage);
 		entityarrow.setKnockbackStrength(knockback);
+		entityarrow.setFire(100);
 		world.addEntity(entityarrow);
 		double x = entity.getPosX();
 		double y = entity.getPosY();
@@ -216,11 +257,12 @@ public class GunItem extends OuoModElements.ModElement {
 		double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
 		double d1 = target.getPosX() - entity.getPosX();
 		double d3 = target.getPosZ() - entity.getPosZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 5f * 2, 12.0F);
+		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 99f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(5);
+		entityarrow.setDamage(6);
 		entityarrow.setKnockbackStrength(0);
 		entityarrow.setIsCritical(true);
+		entityarrow.setFire(100);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();
 		double y = entity.getPosY();

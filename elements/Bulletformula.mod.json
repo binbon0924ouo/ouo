@@ -10,37 +10,37 @@
     "recipeShapeless": true,
     "recipeSlots": [
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": ""
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": "Items.REDSTONE"
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": "Items.REDSTONE"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Fly"
+      "value": "CUSTOM:Bullet"
     },
-    "name": "flyformula",
+    "name": "bulletformula",
     "namespace": "mod"
   }
 }
