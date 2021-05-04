@@ -21,7 +21,6 @@ import net.minecraft.item.UseAction;
 import net.minecraft.item.ShootableItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -36,6 +35,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.ouo.itemgroup.ModItemGroup;
 import net.mcreator.ouo.entity.renderer.GunRenderer;
 import net.mcreator.ouo.OuoModElements;
 
@@ -63,7 +63,7 @@ public class GunItem extends OuoModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ItemGroup.COMBAT).maxDamage(9000));
+			super(new Item.Properties().group(ModItemGroup.tab).maxDamage(9000));
 			setRegistryName("gun");
 		}
 

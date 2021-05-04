@@ -8,7 +8,7 @@
     "name": "Gun",
     "specialInfo": [],
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:Mod"
     },
     "stackSize": 1,
     "ammoItem": {
