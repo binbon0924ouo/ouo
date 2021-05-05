@@ -3,10 +3,10 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "G",
-    "keyBindingName": "Conversion",
+    "keyBindingName": "¤Á ¤}",
     "keyBindingCategoryKey": "misc",
     "onKeyPressed": {
-      "name": "ConversionAnXiaAnJianShi"
+      "name": "Conversion2AnXiaAnJianShi"
     }
   }
 }

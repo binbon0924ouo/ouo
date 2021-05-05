@@ -18,7 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.ouo.procedures.Conversion2AnXiaAnJianShiProcedure;
+import net.mcreator.ouo.procedures.HAnXiaAnJianShiProcedure;
 import net.mcreator.ouo.OuoModElements;
 import net.mcreator.ouo.OuoMod;
 
@@ -27,11 +27,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @OuoModElements.ModElement.Tag
-public class Conversion2KeyBinding extends OuoModElements.ModElement {
+public class HKeyBinding extends OuoModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
-	public Conversion2KeyBinding(OuoModElements instance) {
-		super(instance, 20);
+	public HKeyBinding(OuoModElements instance) {
+		super(instance, 23);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
 				KeyBindingPressedMessage::handler);
 	}
@@ -39,7 +39,7 @@ public class Conversion2KeyBinding extends OuoModElements.ModElement {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.ouo.conversion_2", GLFW.GLFW_KEY_H, "key.categories.misc");
+		keys = new KeyBinding("key.ouo.h", GLFW.GLFW_KEY_H, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -93,7 +93,7 @@ public class Conversion2KeyBinding extends OuoModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
-				Conversion2AnXiaAnJianShiProcedure.executeProcedure($_dependencies);
+				HAnXiaAnJianShiProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

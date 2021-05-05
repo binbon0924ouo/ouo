@@ -18,7 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.ouo.procedures.ConversionAnXiaAnJianShiProcedure;
+import net.mcreator.ouo.procedures.Conversion2AnXiaAnJianShiProcedure;
 import net.mcreator.ouo.OuoModElements;
 import net.mcreator.ouo.OuoMod;
 
@@ -93,7 +93,7 @@ public class ConversionKeyBinding extends OuoModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
-				ConversionAnXiaAnJianShiProcedure.executeProcedure($_dependencies);
+				Conversion2AnXiaAnJianShiProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

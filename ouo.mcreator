@@ -147,23 +147,6 @@
       "registry_name": "conversionbow"
     },
     {
-      "name": "ConversionAnXiaAnJianShi",
-      "type": "procedure",
-      "sortid": 19,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "conversion_an_xia_an_jian_shi",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Conversion",
       "type": "keybind",
       "sortid": 19,
@@ -190,15 +173,6 @@
       }
     },
     {
-      "name": "Conversion2",
-      "type": "keybind",
-      "sortid": 20,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "conversion_2"
-    },
-    {
       "name": "Conversionrarow1",
       "type": "recipe",
       "sortid": 21,
@@ -206,6 +180,41 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "conversionrarow_1"
+    },
+    {
+      "name": "HAnXiaAnJianShi",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "h_an_xia_an_jian_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "H",
+      "type": "keybind",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "h"
+    },
+    {
+      "name": "Explosingun",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explosingun"
     }
   ],
   "variable_elements": [],
@@ -214,12 +223,12 @@
     "en_us": {
       "itemGroup.tabmod": "Popsicle mod",
       "item.ouo.imboingboing": "Rushia",
-      "key.ouo.conversion_2": "Conversion 2",
+      "key.ouo.h": "切劍",
       "item.ouo.explosiongun": "定向引爆器",
       "item.ouo.conversionbow": "轉換弓",
       "item.ouo.conversionsword": "轉換劍",
       "item.ouo.bullet": "彈藥",
-      "key.ouo.conversion": "Conversion",
+      "key.ouo.conversion": "切 弓",
       "item.ouo.conversionarrow": "轉換箭",
       "item.ouo.gun": "手槍"
     }

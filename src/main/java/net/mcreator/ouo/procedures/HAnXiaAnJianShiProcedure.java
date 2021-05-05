@@ -14,28 +14,28 @@ import net.mcreator.ouo.OuoMod;
 import java.util.Map;
 
 @OuoModElements.ModElement.Tag
-public class ConversionAnXiaAnJianShiProcedure extends OuoModElements.ModElement {
-	public ConversionAnXiaAnJianShiProcedure(OuoModElements instance) {
-		super(instance, 19);
+public class HAnXiaAnJianShiProcedure extends OuoModElements.ModElement {
+	public HAnXiaAnJianShiProcedure(OuoModElements instance) {
+		super(instance, 23);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				OuoMod.LOGGER.warn("Failed to load dependency entity for procedure ConversionAnXiaAnJianShi!");
+				OuoMod.LOGGER.warn("Failed to load dependency entity for procedure HAnXiaAnJianShi!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		while (((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(ConversionswordItem.block, (int) (1)))
+				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(ConversionbowItem.block, (int) (1)))
 				: false)) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(ConversionswordItem.block, (int) (1));
+				ItemStack _stktoremove = new ItemStack(ConversionbowItem.block, (int) (1));
 				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
 						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(ConversionbowItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(ConversionswordItem.block, (int) (1));
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}
