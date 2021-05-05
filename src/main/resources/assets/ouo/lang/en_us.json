@@ -1,7 +1,12 @@
 {
-  "itemGroup.tabmod": "Mod",
+  "itemGroup.tabmod": "Popsicle mod",
   "item.ouo.imboingboing": "Rushia",
-  "item.ouo.explosiongun": "Explosiongun",
-  "item.ouo.bullet": "Bullet",
-  "item.ouo.gun": "Gun"
+  "key.ouo.conversion_2": "Conversion 2",
+  "item.ouo.explosiongun": "定向引爆器",
+  "item.ouo.conversionbow": "轉換弓",
+  "item.ouo.conversionsword": "轉換劍",
+  "item.ouo.bullet": "彈藥",
+  "key.ouo.conversion": "Conversion",
+  "item.ouo.conversionarrow": "轉換箭",
+  "item.ouo.gun": "手槍"
 }

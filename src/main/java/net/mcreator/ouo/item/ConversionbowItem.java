@@ -35,7 +35,7 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.ouo.itemgroup.ModItemGroup;
-import net.mcreator.ouo.entity.renderer.GunRenderer;
+import net.mcreator.ouo.entity.renderer.ConversionbowRenderer;
 import net.mcreator.ouo.OuoModElements;
 
 import java.util.Random;
@@ -44,15 +44,15 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 @OuoModElements.ModElement.Tag
-public class GunItem extends OuoModElements.ModElement {
-	@ObjectHolder("ouo:gun")
+public class ConversionbowItem extends OuoModElements.ModElement {
+	@ObjectHolder("ouo:conversionbow")
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletgun").setRegistryName("entitybulletgun");
-	public GunItem(OuoModElements instance) {
-		super(instance, 4);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new GunRenderer.ModelRegisterHandler());
+			.size(0.5f, 0.5f)).build("entitybulletconversionbow").setRegistryName("entitybulletconversionbow");
+	public ConversionbowItem(OuoModElements instance) {
+		super(instance, 17);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new ConversionbowRenderer.ModelRegisterHandler());
 	}
 
 	@Override
@@ -62,8 +62,8 @@ public class GunItem extends OuoModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ModItemGroup.tab).maxDamage(9000));
-			setRegistryName("gun");
+			super(new Item.Properties().group(ModItemGroup.tab).maxDamage(2000));
+			setRegistryName("conversionbow");
 		}
 
 		@Override
@@ -74,7 +74,7 @@ public class GunItem extends OuoModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.NONE;
+			return UseAction.BOW;
 		}
 
 		@Override
@@ -88,7 +88,7 @@ public class GunItem extends OuoModElements.ModElement {
 				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 				builder.putAll(super.getAttributeModifiers(slot));
 				builder.put(Attributes.ATTACK_DAMAGE,
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Ranged item modifier", (double) 2, AttributeModifier.Operation.ADDITION));
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Ranged item modifier", (double) 1.5, AttributeModifier.Operation.ADDITION));
 				builder.put(Attributes.ATTACK_SPEED,
 						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Ranged item modifier", -2.4, AttributeModifier.Operation.ADDITION));
 				return builder.build();
@@ -97,31 +97,31 @@ public class GunItem extends OuoModElements.ModElement {
 		}
 
 		@Override
-		public void onUsingTick(ItemStack itemstack, LivingEntity entityLiving, int count) {
-			World world = entityLiving.world;
+		public void onPlayerStoppedUsing(ItemStack itemstack, World world, LivingEntity entityLiving, int timeLeft) {
 			if (!world.isRemote && entityLiving instanceof ServerPlayerEntity) {
 				ServerPlayerEntity entity = (ServerPlayerEntity) entityLiving;
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == new ItemStack(BulletItem.block, (int) (1)).getItem());
+					ItemStack stack = ShootableItem.getHeldAmmo(entity,
+							e -> e.getItem() == new ItemStack(ConversionarrowItem.block, (int) (1)).getItem());
 					if (stack == ItemStack.EMPTY) {
 						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
 							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == new ItemStack(BulletItem.block, (int) (1)).getItem()) {
+							if (teststack != null && teststack.getItem() == new ItemStack(ConversionarrowItem.block, (int) (1)).getItem()) {
 								stack = teststack;
 								break;
 							}
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 7, 0);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 3f, 6, 5);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 						} else {
-							if (new ItemStack(BulletItem.block, (int) (1)).isDamageable()) {
+							if (new ItemStack(ConversionarrowItem.block, (int) (1)).isDamageable()) {
 								if (stack.attemptDamageItem(1, random, entity)) {
 									stack.shrink(1);
 									stack.setDamage(0);
@@ -135,7 +135,6 @@ public class GunItem extends OuoModElements.ModElement {
 							}
 						}
 					}
-					entity.stopActiveHand();
 				}
 			}
 		}
@@ -167,12 +166,12 @@ public class GunItem extends OuoModElements.ModElement {
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(BulletItem.block, (int) (1));
+			return new ItemStack(ConversionarrowItem.block, (int) (1));
 		}
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(BulletItem.block, (int) (1));
+			return new ItemStack(ConversionarrowItem.block, (int) (1));
 		}
 
 		@Override
@@ -216,10 +215,10 @@ public class GunItem extends OuoModElements.ModElement {
 		double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
 		double d1 = target.getPosX() - entity.getPosX();
 		double d3 = target.getPosZ() - entity.getPosZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 5f * 2, 12.0F);
+		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 3f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(7);
-		entityarrow.setKnockbackStrength(0);
+		entityarrow.setDamage(6);
+		entityarrow.setKnockbackStrength(5);
 		entityarrow.setIsCritical(true);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();

@@ -3,10 +3,10 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "image-removebg-preview_1",
+    "texture": "165544",
     "customModelName": "Normal",
-    "name": "¼uÃÄ",
-    "rarity": "UNCOMMON",
+    "name": "Âà´«½b",
+    "rarity": "RARE",
     "creativeTab": {
       "value": "CUSTOM:Mod"
     },
@@ -19,7 +19,7 @@
       "value": ""
     },
     "destroyAnyBlock": false,
-    "immuneToFire": false,
+    "immuneToFire": true,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "enableMeleeDamage": true,

@@ -1,0 +1,31 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "mechanized_sawblade",
+    "customModelName": "Normal",
+    "name": "Âà´«¼C",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Mod"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 0,
+    "efficiency": 4.0,
+    "attackSpeed": 60.0,
+    "enchantability": 20,
+    "damageVsEntity": 16.0,
+    "usageCount": 2000,
+    "blocksAffected": [],
+    "hasGlow": true,
+    "repairItems": [
+      {
+        "value": "Items.DIAMOND"
+      }
+    ],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "123",
     "customModelName": "Normal",
-    "name": "Explosiongun",
+    "name": "定向引爆器",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:Mod"

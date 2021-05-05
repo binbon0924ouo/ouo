@@ -109,17 +109,110 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "imboingboing"
+    },
+    {
+      "name": "Conversionsword",
+      "type": "tool",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversionsword"
+    },
+    {
+      "name": "Conversionword",
+      "type": "recipe",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversionword"
+    },
+    {
+      "name": "Conversionarrow",
+      "type": "item",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversionarrow"
+    },
+    {
+      "name": "Conversionbow",
+      "type": "gun",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversionbow"
+    },
+    {
+      "name": "ConversionAnXiaAnJianShi",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversion_an_xia_an_jian_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Conversion",
+      "type": "keybind",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversion"
+    },
+    {
+      "name": "Conversion2AnXiaAnJianShi",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversion_2_an_xia_an_jian_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Conversion2",
+      "type": "keybind",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conversion_2"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "itemGroup.tabmod": "Mod",
+      "itemGroup.tabmod": "Popsicle mod",
       "item.ouo.imboingboing": "Rushia",
-      "item.ouo.explosiongun": "Explosiongun",
-      "item.ouo.bullet": "Bullet",
-      "item.ouo.gun": "Gun"
+      "key.ouo.conversion_2": "Conversion 2",
+      "item.ouo.explosiongun": "定向引爆器",
+      "item.ouo.conversionbow": "轉換弓",
+      "item.ouo.conversionsword": "轉換劍",
+      "item.ouo.bullet": "彈藥",
+      "key.ouo.conversion": "Conversion",
+      "item.ouo.conversionarrow": "轉換箭",
+      "item.ouo.gun": "手槍"
     }
   },
   "foldersRoot": {
