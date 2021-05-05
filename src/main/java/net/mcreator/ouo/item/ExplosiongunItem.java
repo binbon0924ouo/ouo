@@ -118,7 +118,7 @@ public class ExplosiongunItem extends OuoModElements.ModElement {
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 99f, 6, 0);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 7f, 10000, 0);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -257,9 +257,9 @@ public class ExplosiongunItem extends OuoModElements.ModElement {
 		double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
 		double d1 = target.getPosX() - entity.getPosX();
 		double d3 = target.getPosZ() - entity.getPosZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 99f * 2, 12.0F);
+		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 7f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(6);
+		entityarrow.setDamage(10000);
 		entityarrow.setKnockbackStrength(0);
 		entityarrow.setIsCritical(true);
 		entityarrow.setFire(100);
