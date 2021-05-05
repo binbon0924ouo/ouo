@@ -83,6 +83,12 @@ public class ConversionbowItem extends OuoModElements.ModElement {
 		}
 
 		@Override
+		@OnlyIn(Dist.CLIENT)
+		public boolean hasEffect(ItemStack itemstack) {
+			return true;
+		}
+
+		@Override
 		public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType slot) {
 			if (slot == EquipmentSlotType.MAINHAND) {
 				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
@@ -116,7 +122,7 @@ public class ConversionbowItem extends OuoModElements.ModElement {
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 3f, 6, 5);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 3f, 6, 1);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -218,7 +224,7 @@ public class ConversionbowItem extends OuoModElements.ModElement {
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 3f * 2, 12.0F);
 		entityarrow.setSilent(true);
 		entityarrow.setDamage(6);
-		entityarrow.setKnockbackStrength(5);
+		entityarrow.setKnockbackStrength(1);
 		entityarrow.setIsCritical(true);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();

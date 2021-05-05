@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:redstone"
+      "item": "minecraft:iron_ingot"
     },
     {
       "item": "minecraft:redstone"
@@ -11,6 +11,6 @@
   ],
   "result": {
     "item": "ouo:bullet",
-    "count": 1
+    "count": 2
   }
 }

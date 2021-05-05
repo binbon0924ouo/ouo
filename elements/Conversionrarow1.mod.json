@@ -5,7 +5,7 @@
     "recipeType": "Crafting",
     "xpReward": 0.0,
     "cookingTime": 200,
-    "recipeRetstackSize": 2,
+    "recipeRetstackSize": 1,
     "group": "",
     "recipeShapeless": true,
     "recipeSlots": [
@@ -28,19 +28,19 @@
         "value": ""
       },
       {
-        "value": ""
+        "value": "Blocks.TORCH"
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": "Items.STICK"
       },
       {
-        "value": "Items.REDSTONE"
+        "value": "Items.IRON_NUGGET"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Bullet"
+      "value": "CUSTOM:Conversionarrow"
     },
-    "name": "bulletformula",
+    "name": "conversionrarow_1",
     "namespace": "mod"
   }
 }

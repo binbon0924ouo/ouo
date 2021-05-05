@@ -19,13 +19,13 @@
     "actionSound": {
       "value": "entity.arrow.shoot"
     },
-    "hasGlow": false,
+    "hasGlow": true,
     "animation": "bow",
     "enableMeleeDamage": true,
     "damageVsEntity": 3.5,
     "bulletPower": 3.0,
     "bulletDamage": 6.0,
-    "bulletKnockback": 5,
+    "bulletKnockback": 1,
     "bulletParticles": true,
     "bulletIgnitesFire": false,
     "bulletItemTexture": {

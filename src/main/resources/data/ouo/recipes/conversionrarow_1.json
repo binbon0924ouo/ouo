@@ -1,0 +1,19 @@
+{
+  "group": "ouo",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:torch"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "ouo:conversionarrow",
+    "count": 1
+  }
+}
