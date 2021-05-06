@@ -1,0 +1,16 @@
+{
+  "group": "ouo",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_block"
+    },
+    {
+      "item": "minecraft:flint_and_steel"
+    }
+  ],
+  "result": {
+    "item": "ouo:d",
+    "count": 1
+  }
+}

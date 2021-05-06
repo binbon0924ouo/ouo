@@ -1,0 +1,42 @@
+{
+  "_fv": 18,
+  "_type": "dimension",
+  "definition": {
+    "biomesInDimension": [
+      {
+        "value": "plains"
+      }
+    ],
+    "worldGenType": "Normal world gen",
+    "mainFillerBlock": {
+      "value": "Blocks.DIAMOND_BLOCK"
+    },
+    "fluidBlock": {
+      "value": "Blocks.SLIME_BLOCK"
+    },
+    "canRespawnHere": true,
+    "hasFog": false,
+    "isDark": false,
+    "doesWaterVaporize": false,
+    "sleepResult": "ALLOW",
+    "hasSkyLight": true,
+    "imitateOverworldBehaviour": true,
+    "portalFrame": {
+      "value": "Blocks.DIAMOND_BLOCK"
+    },
+    "portalParticles": {
+      "value": "REVERSE_PORTAL"
+    },
+    "portalLuminance": 10,
+    "portalSound": {
+      "value": "block.portal.ambient"
+    },
+    "igniterName": "Æp¥Û»â°ì",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "d1",
+    "portalTexture": "fs",
+    "enablePortal": true
+  }
+}

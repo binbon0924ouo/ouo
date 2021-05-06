@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "ouo:block/d_portal_ew"
+    },
+    "axis=x": {
+      "model": "ouo:block/d_portal_ns"
+    }
+  }
+}
