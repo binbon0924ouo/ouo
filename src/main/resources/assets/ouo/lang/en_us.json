@@ -2,16 +2,12 @@
   "key.ouo.h": "切劍",
   "item.ouo.conversionbow": "轉換弓",
   "item.ouo.conversionsword": "轉換劍",
+  "item.ouo.ji_tui": "Ji Tui",
   "item.ouo.bullet": "彈藥",
   "itemGroup.tabmod": "Popsicle mod",
   "item.ouo.imboingboing": "Rushia",
   "item.ouo.explosiongun": "定向引爆器",
-  "item.ouo.d": "鑽石領域",
-  "advancements.db.descr": "走一走看看吧",
-  "advancements.da.title": "鑽石領域",
   "key.ouo.conversion": "切 弓",
   "item.ouo.conversionarrow": "轉換箭",
-  "advancements.db.title": "怎麼一樣",
-  "item.ouo.gun": "手槍",
-  "advancements.da.descr": "鑽石領域和鑽石磚?"
+  "item.ouo.gun": "手槍"
 }

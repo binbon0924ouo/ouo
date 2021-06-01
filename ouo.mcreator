@@ -217,43 +217,30 @@
       "registry_name": "explosingun"
     },
     {
-      "name": "D",
-      "type": "dimension",
+      "name": "JiTui",
+      "type": "gun",
       "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "d",
-      "metadata": {
-        "ep": true
-      }
+      "registry_name": "ji_tui"
     },
     {
-      "name": "Dd",
-      "type": "recipe",
+      "name": "JiTuiDangZiDanJiZhongShiTiShi",
+      "type": "procedure",
       "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "dd"
-    },
-    {
-      "name": "Da",
-      "type": "achievement",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "da"
-    },
-    {
-      "name": "Db",
-      "type": "achievement",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "db"
+      "registry_name": "ji_tui_dang_zi_dan_ji_zhong_shi_ti_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -263,18 +250,14 @@
       "key.ouo.h": "ち糃",
       "item.ouo.conversionbow": "锣传",
       "item.ouo.conversionsword": "锣传糃",
+      "item.ouo.ji_tui": "Ji Tui",
       "item.ouo.bullet": "紆媚",
       "itemGroup.tabmod": "Popsicle mod",
       "item.ouo.imboingboing": "Rushia",
       "item.ouo.explosiongun": "﹚ま脄竟",
-      "item.ouo.d": "苝ホ烩办",
-      "advancements.db.descr": "ǐǐ",
-      "advancements.da.title": "苝ホ烩办",
       "key.ouo.conversion": "ち ",
       "item.ouo.conversionarrow": "锣传絙",
-      "advancements.db.title": "或妓",
-      "item.ouo.gun": "も簀",
-      "advancements.da.descr": "苝ホ烩办㎝苝ホ縥?"
+      "item.ouo.gun": "も簀"
     }
   },
   "foldersRoot": {
